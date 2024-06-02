@@ -189,6 +189,16 @@ function Header(props) {
               </li>
             </Link>
           ))}
+          <Link
+            to={"/orders"}
+            onClick={() => {
+              setToggle(false);
+            }}
+          >
+            <li className="p-2 bg-white bg-opacity-90 rounded-lg shadow uppercase">
+              Orders
+            </li>
+          </Link>
         </ul>
       </div>
     </header>
