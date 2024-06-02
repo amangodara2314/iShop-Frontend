@@ -20,7 +20,6 @@ const View = () => {
         })
         .then((success) => {
           if (success.data.status == 1) {
-            console.log(success.data);
             Cookies.set("ishopAdminToken", success.data.token, { expires: 1 });
             navigate("/admin/");
           } else {

@@ -7,7 +7,7 @@ function Dashboard(props) {
     useContext(MainContext);
   const fetchTransactions = () => {
     axios
-      .get(API_BASE_URL + TRANSACTION_URL + "/get")
+      .get(API_BASE_URL + TRANSACTION_URL + "/get", { withCredentials: true })
       .then((success) => {
         setTransactions(success.data.transaction);
       })
