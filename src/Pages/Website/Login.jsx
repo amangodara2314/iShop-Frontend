@@ -34,6 +34,7 @@ function Login(props) {
             setLoading(false);
             Cookies.set("ishopToken", success.data.token);
             dispatcher(login({ user: success.data.user }));
+            console.log(success.data.user._id, cart.data);
             stateToCart(success.data.user._id, cart.data);
             e.target.reset();
             navigate("/");
