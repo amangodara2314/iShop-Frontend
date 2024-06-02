@@ -99,6 +99,7 @@ function Main(props) {
     axios
       .post(API_BASE_URL + CART_URL + "/state-to-cart/" + id, data)
       .then((success) => {
+        console.log(success.data.cart);
         const prod = success.data.cart.map((c) => {
           return {
             pId: c.pId._id,

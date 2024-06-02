@@ -19,6 +19,7 @@ function Cart(props) {
   const { data, total } = useSelector((store) => store.cart);
   const navigator = useNavigate();
   const { user } = useSelector((store) => store.user);
+  const navigate = useNavigate();
   const [toggle, setToggle] = useState(false);
   const dispatcher = useDispatch();
   const {
@@ -493,6 +494,9 @@ function Cart(props) {
                 </div>
                 <div
                   onClick={() => {
+                    if (!user) {
+                      navigate("/login");
+                    }
                     setToggle(true);
                   }}
                   className="bg-blue-500 p-3 text-center text-white mt-4 cursor-pointer"
