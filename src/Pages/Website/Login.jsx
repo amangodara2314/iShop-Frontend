@@ -33,9 +33,11 @@ function Login(props) {
           if (success.data.status == 1) {
             setLoading(false);
             Cookies.set("ishopToken", success.data.token);
+            stateToCart(
+              success.data.user._id,
+              JSON.parse(localStorage.getItem("data"))
+            );
             dispatcher(login({ user: success.data.user }));
-            console.log(success.data.user._id, cart.data);
-            stateToCart(success.data.user._id, cart.data);
             e.target.reset();
             navigate("/");
           } else {
