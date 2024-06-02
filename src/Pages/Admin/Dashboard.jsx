@@ -1,13 +1,20 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MainContext } from "../../Context/Main";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 function Dashboard(props) {
   const { transactions, setTransactions, TRANSACTION_URL, API_BASE_URL } =
     useContext(MainContext);
   const fetchTransactions = () => {
+    const token = Cookies.get("ishopAdminToken");
+
     axios
-      .get(API_BASE_URL + TRANSACTION_URL + "/get", { withCredentials: true })
+      .get(API_BASE_URL + TRANSACTION_URL + "/get", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then((success) => {
         setTransactions(success.data.transaction);
       })
