@@ -96,7 +96,6 @@ function Main(props) {
   };
 
   const stateToCart = (id, data) => {
-    console.log(data);
     axios
       .post(API_BASE_URL + CART_URL + "/state-to-cart/" + id, data)
       .then((success) => {
