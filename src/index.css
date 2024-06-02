@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.banner-bg{
+    background: transparent linear-gradient(67deg, #E71D3A 0%, #ECC7C1 45%, #EFCAC4 58%, #E4BDB8 70%, #42A8FE 100%) 0% 0% no-repeat padding-box;}
+
+.myBorder {
+    border: 3px solid #F6F7F8;
+}
+.myBorderSmall{
+    border: 2px solid #F1F3F4;
+}
+.bluebg{
+    background: #2E90E5 0% 0% no-repeat padding-box;
+}
+.myRange::-webkit-slider-runnable-track{
+    height: 5px;
+}
+.myRange::-webkit-slider-thumb{
+    border: 2px solid white;
+    transform: translateY(-5px);
+}
