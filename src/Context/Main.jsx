@@ -68,10 +68,14 @@ function Main(props) {
   };
 
   const fetchProduct = (limit = 0, color = null, category_slug = null) => {
+    setLoading(true);
+
     const urlQuery = new URLSearchParams({ limit, color, category_slug });
     axios
       .get(`${API_BASE_URL + PRODUCT_URL}?${urlQuery}`)
       .then((success) => {
+        setLoading(false);
+
         setProducts(success.data.products.filter((p) => p.status));
         setProductImageUrl(success.data.imageBaseUrl);
       })
